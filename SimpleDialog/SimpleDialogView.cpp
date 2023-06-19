@@ -26,6 +26,7 @@ IMPLEMENT_DYNCREATE(CSimpleDialogView, CView)
 BEGIN_MESSAGE_MAP(CSimpleDialogView, CView)
 	ON_WM_CONTEXTMENU()
 	ON_WM_RBUTTONUP()
+	ON_COMMAND(ID_NEW_OPTIONS, &CSimpleDialogView::OnToolsOptions)
 END_MESSAGE_MAP()
 
 // CSimpleDialogView construction/destruction
@@ -96,3 +97,10 @@ CSimpleDialogDoc* CSimpleDialogView::GetDocument() const // non-debug version is
 
 
 // CSimpleDialogView message handlers
+
+
+void CSimpleDialogView::OnToolsOptions()
+{
+	COptions dlgOptions;
+	dlgOptions.DoModal();
+}
